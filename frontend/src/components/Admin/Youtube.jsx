@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-// import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
-import { addYoutube, getUser } from "../../actions/user";
+import { addProjectCard, getUser } from "../../actions/user";
 import { MdKeyboardBackspace } from "react-icons/md";
 import { Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -14,7 +13,6 @@ const Youtube = () => {
   const { user } = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
-  // const alert = useAlert();
 
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
@@ -22,7 +20,7 @@ const Youtube = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    await dispatch(addYoutube(title, url, image));
+    await dispatch(addProjectCard(title, url, image));
     dispatch(getUser());
   };
 
@@ -41,15 +39,12 @@ const Youtube = () => {
 
   useEffect(() => {
     if (error) {
-      // alert.error(error);
       dispatch({ type: "CLEAR_ERRORS" });
     }
     if (message) {
-      // alert.success(message);
       dispatch({ type: "CLEAR_MESSAGE" });
     }
     if (loginMessage) {
-      // alert.success(loginMessage);
       dispatch({ type: "CLEAR_MESSAGE" });
     }
   }, [error, message, dispatch, loginMessage]);
@@ -104,8 +99,8 @@ const Youtube = () => {
 
         <div className="adminPanelYoutubeVideos">
           {user &&
-            user.youtube &&
-            user.youtube.map((item) => (
+            user.projectCard &&
+            user.projectCard.map((item) => (
               <YoutubeCard
                 key={item._id}
                 url={item.url}

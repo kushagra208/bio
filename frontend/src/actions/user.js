@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const url = "https://bio-fxs3fnkwa-kushagra208.vercel.app/"
+const url = "https://bio-me5391wq0-kushagra208.vercel.app"
 export const getUser = () => async (dispatch) => {
   try {
     dispatch({
@@ -180,14 +180,14 @@ export const deleteTimeline = (id) => async (dispatch) => {
   }
 };
 
-export const addYoutube = (title, url, image) => async (dispatch) => {
+export const addProjectCard = (title, url, image) => async (dispatch) => {
   try {
     dispatch({
-      type: "ADD_YOUTUBE_REQUEST",
+      type: "ADD_PROJECTCARD_REQUEST",
     });
 
     const { data } = await axios.post(
-      `${url}/api/v1/admin/youtube/add`,
+      `${url}/api/v1/admin/projectCard/add`,
       { title, url, image },
       {
         headers: {
@@ -197,32 +197,32 @@ export const addYoutube = (title, url, image) => async (dispatch) => {
     );
 
     dispatch({
-      type: "ADD_YOUTUBE_SUCCESS",
+      type: "ADD_PROJECTCARD_SUCCESS",
       payload: data.message,
     });
   } catch (error) {
     dispatch({
-      type: "ADD_YOUTUBE_FAILURE",
+      type: "ADD_PROJECTCARD_FAILURE",
       payload: error.response.data.message,
     });
   }
 };
 
-export const deleteYoutube = (id) => async (dispatch) => {
+export const deleteProjectCard = (id) => async (dispatch) => {
   try {
     dispatch({
-      type: "DELETE_YOUTUBE_REQUEST",
+      type: "DELETE_PROJECTCARD_REQUEST",
     });
 
-    const { data } = await axios.delete(`${url}/api/v1/admin/youtube/${id}`);
+    const { data } = await axios.delete(`${url}/api/v1/admin/projectCard/${id}`);
 
     dispatch({
-      type: "DELETE_YOUTUBE_SUCCESS",
+      type: "DELETE_PROJECTCARD_SUCCESS",
       payload: data.message,
     });
   } catch (error) {
     dispatch({
-      type: "DELETE_YOUTUBE_FAILURE",
+      type: "DELETE_PROJECTCARD_FAILURE",
       payload: error.response.data.message,
     });
   }

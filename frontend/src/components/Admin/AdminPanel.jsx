@@ -7,11 +7,9 @@ import { MdTimeline } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout, updateUser } from "../../actions/user";
-// import { useAlert } from "react-alert";
 
 const AdminPanel = () => {
   const dispatch = useDispatch();
-  // const alert = useAlert();
 
   const { message: loginMessage } = useSelector((state) => state.login);
   const { message, error, loading } = useSelector((state) => state.update);

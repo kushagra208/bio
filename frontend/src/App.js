@@ -39,7 +39,7 @@ function App() {
               path="/"
               element={
                 <Home
-                  youtubes={user.youtube}
+                  projectCards={user.projectCards}
                   timelines={user.timeline}
                   skills={user.skills}
                 />

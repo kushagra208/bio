@@ -22,7 +22,7 @@ import YoutubeCard from "../YoutubeCard/YoutubeCard";
 import { Link } from "react-router-dom";
 import { MouseOutlined } from "@mui/icons-material";
 
-const Home = ({ timelines, youtubes, skills }) => {
+const Home = ({ timelines, projectCards, skills }) => {
   useEffect(() => {
     const textureLoader = new THREE.TextureLoader();
 
@@ -201,7 +201,7 @@ const Home = ({ timelines, youtubes, skills }) => {
         <Typography variant="h3">PROJECTS</Typography>
 
         <div className="homeYoutubeWrapper">
-          {youtubes.map((item) => (
+          {projectCards.map((item) => (
             <YoutubeCard
               image={item.image.url}
               title={item.title}
