@@ -49,7 +49,7 @@ const userSchema = new mongoose.Schema({
     },
   },
 
-  youtube: [
+  projectCards: [
     {
       url: String,
       title: String,
