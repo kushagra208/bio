@@ -20,6 +20,7 @@ const Youtube = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    console.log(title, url, image);
     await dispatch(addProjectCard(title, url, image));
     dispatch(getUser());
   };
@@ -99,8 +100,8 @@ const Youtube = () => {
 
         <div className="adminPanelYoutubeVideos">
           {user &&
-            user.projectCard &&
-            user.projectCard.map((item) => (
+            user.projectCards &&
+            user.projectCards.map((item) => (
               <YoutubeCard
                 key={item._id}
                 url={item.url}

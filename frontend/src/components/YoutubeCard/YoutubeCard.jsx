@@ -1,7 +1,7 @@
 import { Button, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { FaTrash } from "react-icons/fa";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { deleteProjectCard, getUser } from "../../actions/user";
 import "./YoutubeCard.css";
 const YoutubeCard = ({
@@ -17,7 +17,11 @@ const YoutubeCard = ({
     await dispatch(deleteProjectCard(id));
     dispatch(getUser());
   };
-
+  
+  const { message, error, loading } = useSelector((state) => state.update);
+  useEffect(() => {
+    console.log(message, error);
+  }, [error, message])
   return (
     <div className="youtubeCard">
       <a href={url} target="blank">

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const url = "https://bio-me5391wq0-kushagra208.vercel.app"
+const url = "http://localhost:4000"
 export const getUser = () => async (dispatch) => {
   try {
     dispatch({
@@ -180,7 +180,7 @@ export const deleteTimeline = (id) => async (dispatch) => {
   }
 };
 
-export const addProjectCard = (title, url, image) => async (dispatch) => {
+export const addProjectCard = (title, projectUrl, image) => async (dispatch) => {
   try {
     dispatch({
       type: "ADD_PROJECTCARD_REQUEST",
@@ -188,7 +188,7 @@ export const addProjectCard = (title, url, image) => async (dispatch) => {
 
     const { data } = await axios.post(
       `${url}/api/v1/admin/projectCard/add`,
-      { title, url, image },
+      { title, projectUrl, image },
       {
         headers: {
           "Content-Type": "application/json",
@@ -229,7 +229,7 @@ export const deleteProjectCard = (id) => async (dispatch) => {
 };
 
 export const addProject =
-  (title, url, image, description, techStack) => async (dispatch) => {
+  (title, projectUrl, image, description, techStack) => async (dispatch) => {
     try {
       dispatch({
         type: "ADD_PROJECT_REQUEST",
@@ -237,7 +237,7 @@ export const addProject =
 
       const { data } = await axios.post(
         `${url}/api/v1/admin/project/add`,
-        { title, url, image, description, techStack },
+        { title, projectUrl, image, description, techStack },
         {
           headers: {
             "Content-Type": "application/json",

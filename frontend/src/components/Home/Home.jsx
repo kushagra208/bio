@@ -7,7 +7,6 @@ import spaceImage from "../../Images/space.jpg";
 import { Typography } from "@mui/material";
 import TimeLine from "../TimeLine/TimeLine";
 import {
-  SiCplusplus,
   SiReact,
   SiJavascript,
   SiMongodb,
