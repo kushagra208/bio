@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const url = "http://localhost:4000"
+const url = "https://api.kushagra.live"
 export const getUser = () => async (dispatch) => {
   try {
     dispatch({
