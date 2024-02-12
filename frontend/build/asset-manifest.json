@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.2394ba66.css",
-    "main.js": "/static/js/main.c4b023bf.js",
+    "main.js": "/static/js/main.50ef789a.js",
     "static/media/moon.jpg": "/static/media/moon.ec9d16757c33a83a4e2f.jpg",
     "static/media/venus.jpg": "/static/media/venus.c093898c8e79f21d8154.jpg",
     "static/media/space.jpg": "/static/media/space.167f7b1f3402562b8e43.jpg",
@@ -9,10 +9,10 @@
     "static/media/logo.png": "/static/media/logo.f5bc9762d24fe4d70125.png",
     "index.html": "/index.html",
     "main.2394ba66.css.map": "/static/css/main.2394ba66.css.map",
-    "main.c4b023bf.js.map": "/static/js/main.c4b023bf.js.map"
+    "main.50ef789a.js.map": "/static/js/main.50ef789a.js.map"
   },
   "entrypoints": [
     "static/css/main.2394ba66.css",
-    "static/js/main.c4b023bf.js"
+    "static/js/main.50ef789a.js"
   ]
 }
